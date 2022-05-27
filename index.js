@@ -11,8 +11,9 @@ app.get('/', (req, res) => {
 });
 
 const httpsServer = https.createServer({
-  key: fs.readFileSync('/etc/letsencrypt/live/munibe.oligarchy.io/privkey.pem'),
-  cert: fs.readFileSync('/etc/letsencrypt/live/munibe.oligarchy.io/fullchain.pem'),
+  key: fs.readFileSync('/etc/letsencrypt/live/backend1.oligarchy.io/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/backend1.oligarchy.io/fullchain.pem'),
+  ca: fs.readFileSync('/etc/letsencrypt/live/backend1.oligarchy.io/chain.pem')
 }, app);
 
 
